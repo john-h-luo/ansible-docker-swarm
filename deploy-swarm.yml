@@ -36,9 +36,8 @@
   roles:
     - docker-swarm-init
   tasks:
-  - name: print variables
-    debug:
-      var: "{{ hostvars['swarm-manager']['worker_token']['stdout'] }}"
+    - debug:
+        var=hostvars[inventory_hostname]
 
 
 
