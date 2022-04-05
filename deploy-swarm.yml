@@ -32,18 +32,18 @@
 - name: initialize docker swarm
   become: yes
   become_user: root
-  hosts: swarm-manager
+  hosts: swarmmanager
   roles:
     - docker-swarm-init
   tasks:
     - debug:
-        var=hostvars['swarm-manager']
+        var=hostvars['swarmmanager']
 
 
 
 # - name: add workers to the swarm
 #   become: yes
 #   become_user: root
-#   hosts: swarm-workers
+#   hosts: swarmworkers
 #   roles:
 #     - docker-swarm-add-worker
