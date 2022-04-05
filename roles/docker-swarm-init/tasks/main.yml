@@ -23,7 +23,4 @@
   register: worker_token
   tags: swarm
 
-- name: print variables
-  debug: 
-    msg: "{{ [manager_token][worker_token] }}"
  
