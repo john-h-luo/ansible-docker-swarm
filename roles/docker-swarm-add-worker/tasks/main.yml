@@ -1,4 +1,4 @@
 ---
 - name: Add Workers to the Swarm
-  shell: "docker swarm join --token SWMTKN-1-3k9e8oefmihd08g2s15pjtf3rb80fxmemkb4add0gw2mlsdwb3-9qt7qg6ovxd8rxru8h15w5b0r 10.170.0.4:2377"
+  shell: "docker swarm join --token {{ hostvars['swarm-manager']['worker_token']['stdout'] }} {{ hostvars[inventory_hostname]['ansible_default_ipv4']['address'] }}:2377"
   tags: swarm
