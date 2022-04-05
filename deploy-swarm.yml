@@ -22,12 +22,12 @@
 #   roles:
 #     - copy-keys
 
-- name: install docker
-  become: yes
-  become_user: root
-  hosts: docker-nodes
-  roles:
-    - docker-installation
+# - name: install docker
+#   become: yes
+#   become_user: root
+#   hosts: docker-nodes
+#   roles:
+#     - docker-installation
 
 - name: initialize docker swarm
   become: yes
@@ -37,6 +37,7 @@
     - docker-swarm-init
 
 - name: variable troubleshooting
+  hosts: docker-nodes
   tasks:
   - name:
     shell: "echo {{ hostvars['swarm-manager']['worker_token']['stdout'] }} {{ hostvars['swarm-manager']['ansible_default_ipv4']['address'] }}:2377"
