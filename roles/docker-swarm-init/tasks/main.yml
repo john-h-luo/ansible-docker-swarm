@@ -24,5 +24,8 @@
   tags: swarm
 
 - debug:
-    msg: "The user '{{ manager_token.stdout }}' has permissions '{{ worker_token.stdout }}'"
+    msg: "The user '{{ ['manager_token'['stdout'] }}' has permissions '{{ worker_token.stdout }}'"
+
+# - debug:
+#     msg: "The user '{{ manager_token.stdout }}' has permissions '{{ worker_token.stdout }}'"
  
