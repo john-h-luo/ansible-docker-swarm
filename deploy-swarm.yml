@@ -23,6 +23,8 @@
 #     - copy-keys
 
 - name: install docker
+  become: yes
+  become_user: docker
   hosts: docker-nodes
   roles:
     - docker-installation
