@@ -1,11 +1,18 @@
 ---
 - name: Install Docker Dependencies
-  apt: name={{ item }} state=latest update_cache=yes
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - software-properties-common 
+  apt:
+    pkg:
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+    state : latest
+    update_cache : yes
+  # with_items:
+  #   - apt-transport-https
+  #   - ca-certificates
+  #   - curl
+  #   - software-properties-common 
   tags: docker
 
 - name: Get Docker key
