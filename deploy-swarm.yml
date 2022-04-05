@@ -38,7 +38,7 @@
   tasks:
   - name: print variables
     debug:
-      var: "{{ hostvars[swarm-manager]['worker_token']['stdout'] }}"
+      var: "{{ hostvars['swarm-manager']['worker_token']['stdout'] }}"
 
 
 
