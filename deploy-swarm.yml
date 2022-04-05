@@ -24,7 +24,7 @@
 
 - name: install docker
   become: yes
-  become_user: docker
+  become_user: jayhwa_lor
   hosts: docker-nodes
   roles:
     - docker-installation
