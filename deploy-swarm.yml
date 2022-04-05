@@ -30,11 +30,15 @@
     - docker-installation
 
 - name: initialize docker swarm
+  become: yes
+  become_user: root
   hosts: swarm-manager
   roles:
     - docker-swarm-init
 
 - name: add workers to the swarm
+  become: yes
+  become_user: root
   hosts: swarm-workers
   roles:
     - docker-swarm-add-worker
