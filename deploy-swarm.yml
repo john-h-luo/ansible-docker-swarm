@@ -37,7 +37,7 @@
     - docker-swarm-init
   tasks:
     - debug:
-        var=hostvars['10.170.0.4']['worker_token']['stdout'] 
+        var=hostvars['ansible_python_interpreter']['worker_token']['stdout'] 
 
 
 
