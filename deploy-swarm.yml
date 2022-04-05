@@ -40,7 +40,7 @@
   hosts: docker-nodes
   tasks:
   - name:
-    shell: "echo {{ hostvars['swarm-manager']['worker_token']['stdout'] }} {{ hostvars['swarm-manager']['ansible_default_ipv4']['address'] }}:2377"
+    shell: "echo {{ hostvars['worker_token']['stdout'] }} {{ hostvars['swarm-manager']['ansible_default_ipv4']['address'] }}:2377"
 
 - name: add workers to the swarm
   become: yes
