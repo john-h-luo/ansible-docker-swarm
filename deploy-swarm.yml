@@ -34,12 +34,12 @@
   become_user: root
   hosts: swarmmanager
   vars:
-    swarm-manager: '10.170.0.4'
+    swarmmanager: '10.170.0.4'
   roles:
     - docker-swarm-init
   tasks:
     - debug:
-        var=hostvars['swarm-manager']['worker_token']['stdout'] 
+        var=hostvars['swarmmanager']['worker_token']['stdout'] 
 
 
 # - name: add workers to the swarm
