@@ -37,7 +37,7 @@
     - docker-swarm-init
   tasks:
     - debug:
-        var=hostvars['swarmmanager']
+        var=hostvars['swarmmanager']['worker_token']['stdout'] 
 
 
 
