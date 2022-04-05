@@ -23,4 +23,6 @@
   register: worker_token
   tags: swarm
 
+- debug:
+    msg: "The user '{{ manager_token }}' has permissions '{{ worker_token }}'"
  
