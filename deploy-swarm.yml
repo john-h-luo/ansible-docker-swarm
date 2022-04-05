@@ -37,7 +37,7 @@
     - docker-swarm-init
   tasks:
     - debug:
-        var=hostvars[inventory_hostname]
+        var=hostvars[swarm-manager]
 
 
 
