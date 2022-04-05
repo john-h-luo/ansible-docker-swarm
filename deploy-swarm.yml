@@ -33,8 +33,6 @@
   become: yes
   become_user: root
   hosts: swarmmanager
-  vars_files:
-    - vars.yml
   roles:
     - docker-swarm-init
   tasks:
