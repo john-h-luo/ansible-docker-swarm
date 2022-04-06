@@ -4,43 +4,26 @@
   become: yes
   become_user: jayhwa_lor
   roles:
-    - create-sudo-user
     - install-modules
     - configure-hosts-file
 
-- name: setup docker user on the nodes
-  become: yes
-  become_user: docker
-  hosts: controller
-  roles:
-    - configure-admin
-
-- name: copy public key to nodes
-  become: yes
-  become_user: docker
-  hosts: docker-nodes
-  roles:
-    - copy-keys
-
 - name: install docker
   become: yes
-  become_user: root
+  become_user: jayhwa_lor
   hosts: docker-nodes
   roles:
     - docker-installation
 
-
 - name: initialize docker swarm
   become: yes
-  become_user: root
+  become_user: jayhwa_lor
   hosts: swarm-managers
   roles:
     - docker-swarm-init
 
-
 - name: add workers to the swarm
   become: yes
-  become_user: root
+  become_user: jayhwa_lor
   hosts: swarm-workers
   roles:
     - docker-swarm-add-worker
