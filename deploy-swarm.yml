@@ -29,20 +29,18 @@
 #   roles:
 #     - docker-installation
 
+
 - name: initialize docker swarm
   become: yes
   become_user: root
   hosts: swarm-managers
   roles:
     - docker-swarm-init
-  tasks:
-    - debug:
-        msg: "{{ hostvars['swarm-manager']['worker_token']['stdout'] }}"
 
 
-# - name: add workers to the swarm
-#   become: yes
-#   become_user: root
-#   hosts: swarmworkers
-#   roles:
-#     - docker-swarm-add-worker
+- name: add workers to the swarm
+  become: yes
+  become_user: root
+  hosts: swarmworkers
+  roles:
+    - docker-swarm-add-worker
