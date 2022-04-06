@@ -11,7 +11,7 @@
 - name: setup docker user on the nodes
   become: yes
   become_user: docker
-  become_methed: runas
+  become_method: runas
   hosts: controller
   roles:
     - configure-admin
