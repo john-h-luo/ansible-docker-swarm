@@ -1,6 +1,8 @@
 ---
 - name: setup pre-requisites
   hosts: all
+  become: yes
+  become_user: root
   roles:
     - create-sudo-user
     - install-modules
