@@ -10,7 +10,7 @@
 
 - name: setup docker user on the nodes
   become: yes
-  become_user: docker
+  become_user: root
   hosts: controller
   roles:
     - configure-admin
