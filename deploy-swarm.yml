@@ -8,12 +8,12 @@
 #     - install-modules
 #     - configure-hosts-file
 
-- name: setup docker user on the nodes
-  become: yes
-  become_user: root
-  hosts: controller
-  roles:
-    - configure-admin
+# - name: setup docker user on the nodes
+#   become: yes
+#   become_user: root
+#   hosts: controller
+#   roles:
+#     - configure-admin
 
 - name: copy public key to nodes
   become: yes
@@ -22,12 +22,12 @@
   roles:
     - copy-keys
 
-# - name: install docker
-#   become: yes
-#   become_user: root
-#   hosts: docker-nodes
-#   roles:
-#     - docker-installation
+- name: install docker
+  become: yes
+  become_user: docker
+  hosts: docker-nodes
+  roles:
+    - docker-installation
 
 
 # - name: initialize docker swarm
