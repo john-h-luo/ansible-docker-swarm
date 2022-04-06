@@ -1,7 +1,5 @@
 ---
 - name: Install Packages
-  become: yes
-  become_user: jayhwa_lor
   apt: name={{ item }} state=latest update_cache=yes
   with_items:
     - ntp

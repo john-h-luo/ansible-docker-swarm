@@ -2,7 +2,7 @@
 - name: setup pre-requisites
   hosts: all
   become: yes
-  become_user: jayhwa_lor
+  become_user: root
   roles:
     - install-modules
     - configure-hosts-file
