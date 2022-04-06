@@ -13,10 +13,10 @@
     src: ssh_config
     dest: /home/docker/.ssh/config
     mode: 0644
-- name: Debug
-  local_action: command whoami
-  register: username_on_the_host
-- debug: var=username_on_the_host
+# - name: Debug
+#   local_action: command whoami
+#   register: username_on_the_host
+# - debug: var=username_on_the_host
 
 - name: empty known_hosts
   file:
