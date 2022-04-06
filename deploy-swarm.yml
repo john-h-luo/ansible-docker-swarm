@@ -15,12 +15,12 @@
   roles:
     - configure-admin
 
-# - name: copy public key to nodes
-#   become: yes
-#   become_user: docker
-#   hosts: docker-nodes
-#   roles:
-#     - copy-keys
+- name: copy public key to nodes
+  become: yes
+  become_user: docker
+  hosts: docker-nodes
+  roles:
+    - copy-keys
 
 # - name: install docker
 #   become: yes
