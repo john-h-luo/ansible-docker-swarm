@@ -13,6 +13,7 @@
     src: ssh_config
     dest: /home/docker/.ssh/config
     mode: 0644
+- name: Debug
   debug:
     shell: whoami
 - name: empty known_hosts
