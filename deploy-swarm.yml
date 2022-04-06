@@ -32,7 +32,7 @@
 - name: initialize docker swarm
   become: yes
   become_user: root
-  hosts: swarmmanager
+  hosts: swarm-managers
   roles:
     - docker-swarm-init
   tasks:
