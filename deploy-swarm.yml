@@ -9,8 +9,9 @@
 #     - configure-hosts-file
 
 - name: setup docker user on the nodes
-  become: no
+  become: yes
   become_user: docker
+  become_methed: runas
   hosts: controller
   roles:
     - configure-admin
