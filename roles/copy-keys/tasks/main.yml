@@ -1,7 +1,7 @@
 ---
 - name: Copy Publick Key to Other Hosts
-  become: true
-  become_user: root
+  # become: yes
+  # become_user: root
   copy:
     src: /tmp/id_rsa.pub
     dest: /tmp/id_rsa.pub
