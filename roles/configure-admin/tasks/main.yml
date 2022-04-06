@@ -14,8 +14,7 @@
     dest: /home/docker/.ssh/config
     mode: 0644
 - name: Debug
-  debug:
-    shell: whoami
+  action: command whoami
 - name: empty known_hosts
   file:
     state: absent
