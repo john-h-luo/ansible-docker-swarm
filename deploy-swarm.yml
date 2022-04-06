@@ -41,6 +41,6 @@
 - name: add workers to the swarm
   become: yes
   become_user: root
-  hosts: swarmworkers
+  hosts: swarm-workers
   roles:
     - docker-swarm-add-worker
