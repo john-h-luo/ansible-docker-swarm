@@ -21,5 +21,5 @@
   shell: "ssh-keyscan {{ item }} >> ~/.ssh/known_hosts"
   with_items:
     - "swarm-manager"
-    - "swarm-worker"
+    - "swarm-worker-01"
 
