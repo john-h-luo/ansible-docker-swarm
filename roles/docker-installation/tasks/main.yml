@@ -21,3 +21,9 @@
 - name: Install Docker-CE
   apt: name="docker-ce" state=latest update_cache=yes
   tags: docker
+
+- name: Install docker-compose from official github repo
+  get_url:
+    url : https://github.com/docker/compose/releases/download/2.4.0/docker-compose-Linux-x86_64
+    dest: /usr/local/bin/docker-compose
+    mode: 'u+x,g+x'
